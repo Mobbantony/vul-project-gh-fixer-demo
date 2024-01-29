@@ -12,7 +12,7 @@ public class SQLInjectionExample extends HttpServlet {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db");
             String user = request.getParameter("username");
 
-            String query = "SELECT * FROM users WHERE username = '" + user + "';";
+            String query = "SELECT * FROM users2 WHERE username = '" + user + "';";
             Statement stmt = con.createStatement();
 
             stmt.executeQuery(query);
@@ -22,4 +22,3 @@ public class SQLInjectionExample extends HttpServlet {
         }
     }
 }
-
